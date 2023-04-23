@@ -1,0 +1,88 @@
+
+(rules PCB td4
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 4395)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.1)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.9)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.0)
+    (clear 125.0 (type smd_to_turn_gap))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    "Net-(C2-Pad1)" "Net-(SW20-B)" "Net-(C4-Pad2)" +3.3V "Net-(D1-A)" "Net-(D2-A)" GND "Net-(D3-A)"
+    "Net-(D4-A)" "Net-(U4-QD)" "Net-(U4-QC)" "Net-(U6-IC2)" "Net-(U6-2C2)" "Net-(U7-IC2)" "Net-(U4-QB)" "Net-(U4-QA)"
+    "Net-(U7-2C2)" "Net-(SW18-A)" "Net-(SW19-A)" "Net-(R22-Pad2)" "Net-(R23-Pad2)" "Net-(R24-Pad2)" "Net-(SW20-A)" "Net-(R25-Pad2)"
+    "Net-(SW20-C)" "Net-(R27-Pad1)" "Net-(SW21-C)" "Net-(SW21-A)" /logic/A0 /logic/A1 "unconnected-(U0-GND-Pad3)" /logic/A2
+    /logic/A3 /logic/D0 /logic/D1 "Net-(C3-Pad1)" "unconnected-(U0-GND-Pad8)" /logic/D2 /logic/D3 /logic/D4
+    /logic/D5 "unconnected-(U0-GND-Pad13)" /logic/D6 /logic/D7 "unconnected-(U0-GPIO12-Pad16)" "unconnected-(U0-GPIO13-Pad17)" "unconnected-(U0-GND-Pad18)" "/clock_reset/CLOCK"
+    "unconnected-(U0-GPIO14-Pad19)" "unconnected-(U0-GPIO15-Pad20)" "/clock_reset/RESET" "unconnected-(U0-GPIO16-Pad21)" "unconnected-(U0-GPIO17-Pad22)" "unconnected-(U0-GND-Pad23)" "unconnected-(U0-GPIO18-Pad24)" "unconnected-(U0-GPIO19-Pad25)"
+    "unconnected-(U0-GPIO20-Pad26)" "unconnected-(U0-GPIO21-Pad27)" "unconnected-(U0-GND-Pad28)" "unconnected-(U0-GPIO22-Pad29)" "unconnected-(U0-RUN-Pad30)" "unconnected-(U0-GPIO26_ADC0-Pad31)" "unconnected-(U0-GPIO27_ADC1-Pad32)" "unconnected-(U0-AGND-Pad33)"
+    "unconnected-(U0-GPIO28_ADC2-Pad34)" "unconnected-(U0-ADC_VREF-Pad35)" "unconnected-(U0-3V3_EN-Pad37)" "unconnected-(U0-VSYS-Pad39)" "unconnected-(U0-VBUS-Pad40)" "unconnected-(U0-SWCLK-Pad41)" "unconnected-(U0-GND-Pad42)" "unconnected-(U0-SWDIO-Pad43)"
+    "unconnected-(U1A-Q-Pad5)" "unconnected-(U1A-~{Q}-Pad6)" "Net-(U1B-~{Q})" "unconnected-(U1B-Q-Pad9)" "Net-(U1B-D)" "Net-(U2-A)" "Net-(U2-B)" "Net-(U2-C)"
+    "Net-(U2-D)" "Net-(U2-~{LOAD})" "Net-(U2-QD)" "Net-(U2-QC)" "Net-(U2-QB)" "Net-(U2-QA)" "unconnected-(U2-CO-Pad15)" "Net-(U3-~{LOAD})"
+    "Net-(U3-QD)" "Net-(U3-QC)" "Net-(U3-QB)" "Net-(U3-QA)" "unconnected-(U3-CO-Pad15)" "Net-(U4-~{LOAD})" "unconnected-(U4-CO-Pad15)" "Net-(U5-~{LOAD})"
+    "unconnected-(U5-CO-Pad15)" "Net-(U6-1Y)" "Net-(U6-2Y)" "Net-(U6-A)" "Net-(U7-1Y)" "Net-(U7-2Y)" "Net-(U10-Pad11)" "Net-(U10-Pad12)"
+    "Net-(U13-Pad13)" "unconnected-(U13-Pad8)"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)
